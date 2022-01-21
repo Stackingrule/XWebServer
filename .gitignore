@@ -1,0 +1,9 @@
+/lib
+/bin
+/log
+/.git
+/.idea
+/cmake-build-debug
+/tests
+/XWebServer
+./.gitignore
