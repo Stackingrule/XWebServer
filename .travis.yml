@@ -8,18 +8,22 @@ os:
 
 before_install:
   - sudo apt-get update
+  - sudo apt-get install -y libssl-dev
   - sudo apt-get install -y g++
   - sudo apt-get install -y yasm
   - sudo apt-get install -y libsdl2-dev
   - wget "https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-Linux-x86_64.tar.gz"
   - tar zxvf cmake-3.22.1-Linux-x86_64.tar.gz
+  - cd cmake-3.33.1
+  - make
+  - sudo make install
+  - cd ../
   - export PATH=`pwd`/cmake-3.22.1-Linux-x86_64/bin:$PATH
-
-  - make cicadaPlayer -j8
 
   before_script:
     - mkdir build
     - cd build
     - cmake
 
-  script: make
+  script:
+    - ./autobuild.sh
