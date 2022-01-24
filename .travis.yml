@@ -1,6 +1,5 @@
 language: cpp
 sudo: required
-dist: bionic
 compiler:
   - clang
 os:
@@ -9,12 +8,12 @@ os:
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libssl-dev
-  - sudo apt-get install -y g++
+  - sudo apt-get install -y clang
   - sudo apt-get install -y yasm
   - sudo apt-get install -y libsdl2-dev
   - wget "https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1-Linux-x86_64.tar.gz"
   - tar zxvf cmake-3.22.1-Linux-x86_64.tar.gz
-  - cd cmake-3.33.1
+  - cd cmake-3.22.1
   - make
   - sudo make install
   - cd ../
